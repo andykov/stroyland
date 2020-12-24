@@ -1,0 +1,236 @@
+$line-height: 1.375em;
+$color-danger: hsl(2, 64%, 58%);
+
+.field-checkbox {
+  $block-name: &;
+
+  display: block;
+  margin-bottom: ($line-height / 2);
+
+  &__title {
+    display: block;
+    font-weight: 700;
+    line-height: $line-height;
+    margin-bottom: 0.4em;
+  }
+
+  &__input-wrap {
+    & + & {
+      padding-top: ($line-height / 2.1);
+    }
+
+    &--white-check {
+      #{$block-name}__name-text:before {
+        background-color: #fff;
+      }
+    }
+  }
+
+  &__name {
+    position: relative;
+    display: inline-block;
+    padding: 4px 2em;
+    margin-right: 0;
+    font-size: 12px;
+
+    font-weight: $font-normal;
+    line-height: 1;
+    text-transform: uppercase;
+
+    &--check-only {
+      padding-left: 0;
+    }
+  }
+
+  &__name-text {
+    vertical-align: middle;
+    transition: all $transition-time;
+
+    // свой чекбокс
+    &:before {
+      content: '';
+      position: absolute;
+      top: 1px;
+      left: 0;
+      width: 20px;
+      height: 20px;
+      background-color: transparent;
+      border: 1px solid $gray;
+      border-radius: 0px;
+      transition: all $transition-time;
+    }
+    @at-root input:checked ~ &:before {
+      background-color: $white;
+      border-color: $gray;
+    }
+    @at-root input:checked ~ &:after {
+      content: '';
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      width: 11px;
+      height: 8px;
+      border-left: 1px solid $black;
+      border-bottom: 1px solid $black;
+      transform: rotate(-47.8deg);
+    }
+
+    @at-root #{$block-name}__name--check-only input:checked ~ & {
+      padding-left: 1.6em;
+      color: $black;
+
+      &:after {
+        width: 10px;
+        height: 6px;
+      }
+    }
+
+    #{$block-name}__name--check-only & {
+      &:before {
+        display: none;
+      }
+    }
+
+    &--one-line {
+      white-space: nowrap;
+    }
+  }
+
+  &__input {
+    position: absolute;
+
+    &:focus,
+    &:active {
+      @include field-focus;
+    }
+
+    // сокрытие инпута в случае использования своего чекбокса
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+  }
+
+  &__help-text-wrap {
+    padding-left: 1.5em;
+  }
+
+  &__help-text {
+    @include field-help-text;
+  }
+
+  &--sm {
+    #{$block-name}__name {
+      padding-left: 1.6em;
+    }
+
+    #{$block-name}__name-text {
+      font-size: 12px;
+      line-height: $line-height;
+
+      &:before {
+        top: 3px;
+      }
+
+      @at-root #{$block-name}--sm
+          input:checked
+          ~ #{$block-name}__name-text:after {
+        top: 6px;
+      }
+    }
+  }
+
+  &--lg {
+    #{$block-name}__name {
+      padding-left: 2.3em;
+    }
+
+    #{$block-name}__name-text {
+      color: $gray;
+
+      &:before {
+        top: -2px;
+        width: 20px;
+        height: 20px;
+      }
+
+      &:after {
+        top: 5px !important;
+        left: 6px !important;
+      }
+    }
+  }
+
+  &--max490 {
+    max-width: 490px;
+  }
+
+  &--mt20 {
+    margin-top: 20px;
+  }
+
+  &--mt10 {
+    margin-top: 10px;
+  }
+
+  &--mb0 {
+    margin-bottom: 0;
+  }
+
+  &--no-check {
+    #{$block-name}__name {
+      padding-left: 0;
+    }
+
+    #{$block-name}__name-text {
+      &:before,
+      &:after {
+        display: none;
+      }
+    }
+  }
+
+  &--text-sm {
+    font-size: 12px;
+    color: $gray !important;
+
+    input:checked ~ .field-checkbox__name-text {
+      color: $text-color !important;
+    }
+  }
+
+  &--grid-4 {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 490px;
+
+    #{$block-name}__input-wrap {
+      width: 100%;
+      margin-bottom: 10px;
+      min-height: 32px;
+
+      @media (min-width: $screen-sm) {
+        width: 25%;
+        padding-right: 4px;
+      }
+    }
+
+    #{$block-name}__input-wrap + #{$block-name}__input-wrap {
+      padding: 0;
+    }
+  }
+
+  &--bdb:not(:last-child) {
+    margin-bottom: $line-height;
+    border-bottom: 1px solid $gray-light;
+  }
+
+  &__input-wrap--error {
+    #{$block-name}__name-text,
+    #{$block-name}__help-text {
+      color: $color-danger;
+    }
+  }
+}

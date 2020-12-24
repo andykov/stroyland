@@ -1,0 +1,49 @@
+.field-quantity {
+  display: inline-flex;
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+
+  input[type='button'] {
+    cursor: pointer;
+    -moz-appearance: textfield;
+    -webkit-appearance: none;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__minus,
+  &__plus,
+  &__input {
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  &__minus,
+  &__plus {
+    flex-shrink: 0;
+    border: 1px solid #efefef;
+    background-color: #fff;
+    width: 18px;
+    padding: 0;
+  }
+
+  &__input {
+    width: 36px;
+    height: 32px;
+    border: 1px solid #efefef;
+    background-color: #f7f7f9;
+    border-radius: 0;
+    padding: 0;
+    margin: 0 -1px;
+    text-align: center;
+  }
+
+  &__plus {
+    // left: -13px;
+  }
+}

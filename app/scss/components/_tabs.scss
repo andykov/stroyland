@@ -1,0 +1,106 @@
+.tabs-nav {
+  border-bottom: 1px solid rgba($color: #000000, $alpha: 0.2);
+  margin-bottom: 40px;
+  position: relative;
+
+  &__mobile {
+    @include md {
+      display: none;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: -1px;
+
+    @include sm-max {
+      position: absolute;
+      z-index: -1;
+      top: 100%;
+      left: 0;
+      max-width: 90vw;
+      width: 1px;
+      margin: 0;
+      background-color: #fff;
+      color: $text-color;
+      border: 1px solid $gray-light;
+      box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+      opacity: 0;
+      visibility: hidden;
+      overflow: hidden;
+      transition: opacity $transition-time;
+    }
+    @include md {
+      flex-direction: row;
+    }
+
+    &.show {
+      @include sm-max {
+        z-index: 1;
+        visibility: visible;
+        opacity: 1;
+        width: 100%;
+      }
+    }
+  }
+
+  &__btn {
+    font-size: 16px;
+    font-weight: $font-medium;
+    line-height: 1;
+    margin-right: 80px;
+    padding: 8px 0;
+    border: 0;
+    border-bottom: 2px solid transparent;
+    text-decoration: none;
+    color: $gray;
+    background-color: transparent;
+
+    &:focus {
+      outline: none;
+    }
+
+    &[aria-selected='true'] {
+      color: $black;
+      border-color: $black;
+    }
+  }
+}
+.tabs-panes {
+  &__item {
+    // &.show {
+    .examples__lg {
+      // opacity: 0;
+      // transform: scale(0.95);
+      // transition: transform 1s;
+    }
+    // }
+    &.show {
+      .examples__lg {
+        // background-color: #000;
+        // opacity: 1;
+        // transform: scale(1.1);
+        // transition: transform 1s;
+        animation: eye 0.7s ease-in-out;
+      }
+      .examples__sm {
+        animation: eye 0.5s ease-in-out;
+
+        & + .examples__sm {
+          animation: eye 0.9s ease-in-out;
+        }
+      }
+    }
+  }
+}
+@keyframes eye {
+  0% {
+    transform: scale(0.97);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

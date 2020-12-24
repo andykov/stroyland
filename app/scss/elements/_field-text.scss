@@ -1,0 +1,61 @@
+$gray-lighter: hsl(0, 0%, 80%) !default;
+$border-color: $gray;
+$border-radius: 0;
+
+$text-color--muted: hsl(0, 0%, 50%) !default;
+
+$line-height: 1.375em !default;
+
+$field-padding-vertical: 1.219em !default;
+$field-padding-horizontal: 1.125em !default;
+
+.field-text {
+  $block-name: &;
+
+  display: block;
+  margin-bottom: 0;
+
+  &__name {
+    @include field-name;
+  }
+
+  &__input-wrap {
+    display: block;
+    position: relative;
+  }
+
+  &__input {
+    @include field-text;
+    margin-top: 15px;
+
+    @at-root textarea#{&} {
+      $textarea-height: ($line-height * 2) + ($field-padding-vertical * 2);
+
+      height: auto;
+      min-height: calc(#{$textarea-height} + 2px);
+      resize: vertical;
+    }
+  }
+
+  &__help-text {
+    @include field-help-text;
+    position: absolute;
+    top: 0;
+  }
+
+  &--error {
+    #{$block-name}__name,
+    #{$block-name}__input,
+    #{$block-name}__help-text {
+      color: $color-danger;
+    }
+
+    #{$block-name}__input {
+      border-color: $color-danger;
+
+      &::placeholder {
+        color: $color-danger;
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+.field-drop-checkboxes {
+  .field-checkbox,
+  .field-checkbox__name {
+    margin-bottom: 0;
+  }
+  .field-checkbox__name {
+    display: block;
+    padding: 19px 2em;
+  }
+  .field-checkbox__name-text {
+    font-size: 18px;
+    line-height: 1;
+
+    &:before {
+      top: 20px;
+    }
+  }
+  input:checked ~ .field-checkbox__name-text:before {
+  }
+  input:checked ~ .field-checkbox__name-text:after {
+    top: 26px;
+    left: 6px;
+  }
+}

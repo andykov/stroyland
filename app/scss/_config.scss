@@ -1,0 +1,237 @@
+@import 'mixins';
+@import 'functions';
+
+// Базовые цвета
+$black: #111111;
+$gray-dark: #4b4b4b;
+$gray: #b6b6b6;
+$gray-light: #f5f5f5;
+$white: #ffffff;
+$color-danger: #d41111;
+
+$accent: $gray;
+$font-size: 16px;
+$text-color: #3c3c3c;
+$link-color: #03a9f4;
+$link-color-hover: #353839;
+$line-height: 1.6;
+
+$user-font: Arial;
+$font-family: $user-font, -apple-system, BlinkMacSystemFont, 'Roboto', 'Ubuntu',
+  'Droid Sans', 'Helvetica Neue', 'Arial', sans-serif;
+// $font-family--serif: 'Georgia', 'Times New Roman', 'Times', serif;
+// $font-family--monospace: 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono',
+//   'Courier New', monospace;
+// $font-family--headings: $font-family;
+
+// Базовая типографика
+
+$font-size: 16px;
+
+$font-size-h1: 36px;
+$font-size-h2-xs: 24px;
+$font-size-h2-md: 30px;
+$font-size-h3: 18px;
+
+$font-bold: 700;
+$font-semibold: 600;
+$font-medium: 500;
+$font-normal: 400;
+
+$font-size-sm: 0.75em; // 12px от 16px
+
+$line-height: 1.6;
+// $line-height:                 1.429em;
+$typo-margin-vertical: 1em;
+$box-shadow: 4px 4px 4px 0 #ecf5f9;
+// 2px 2px 2px 0 rgba($color: #82a7b7, $alpha: 0.15)
+
+$btn-font-size: 12px;
+$btn-color-black: $black;
+$btn-color-white: $white;
+$btn-color-gray: $gray-light;
+$btn-color-hover: $white;
+
+// Ширины
+$screen-xs: 0;
+$screen-sm: 480px;
+$screen-md: 768px;
+$screen-lg: 992px;
+$screen-xl: 1200px;
+$screen-xxl: 1800px;
+
+$container-sm: 100%;
+$container-md: 100%;
+$container-lg: ($screen-lg - 30);
+$container-xl: ($screen-xl - 30);
+$container-xxl: ($screen-xl - 30);
+
+// Модульная сетка
+$grid-columns: 12;
+$grid-gutter-width: 30px;
+
+$transition-time: 0.3s;
+
+// IMPORT SECTION
+// @import './normalize';
+@import 'node_modules/bootstrap/scss/bootstrap-reboot.scss'; // Bootstrap Reboot collection
+// @import 'node_modules/bootstrap/scss/_dropdown.scss';
+// @import 'node_modules/bootstrap/scss/mixins/_breakpoints.scss'; // Bootstrap Breakpoints mixin
+// @import 'node_modules/bootstrap/scss/mixins/_forms.scss';
+// @import 'node_modules/bootstrap/scss/forms.scss';
+// @import 'node_modules/bootstrap/scss/bootstrap-grid.scss' // Optional Bootstrap Grid
+// @import 'node_modules/bootstrap/scss/utilities/_sizing.scss' // Optional Bootstrap Utilites
+
+// FONTS LOAD SECTION
+
+// @include font-f('Roboto', normal, 400, '../fonts/roboto-regular-webfont.woff2');
+// @include font-f('Roboto', italic, 400, '../fonts/roboto-italic-webfont.woff2');
+// @include font-f('Roboto', normal, 700, '../fonts/roboto-bold-webfont.woff2');
+// @include font-f(
+//   'Roboto',
+//   italic,
+//   700,
+//   '../fonts/roboto-bolditalic-webfont.woff2'
+// );
+
+// GENERAL DOCUMENT STYLES
+
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+figure {
+  margin: 0;
+}
+
+::placeholder {
+  color: #666;
+}
+
+::selection {
+  background-color: $accent;
+  color: #fff;
+}
+
+img,
+picture {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+input,
+textarea {
+  outline: none;
+
+  &:focus:required:invalid {
+    border-color: red;
+  }
+
+  &:required:valid {
+    border-color: green;
+  }
+}
+html {
+  min-width: 320px;
+}
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: $font-family;
+  font-size: $font-size;
+  line-height: $line-height;
+  color: $text-color;
+  min-width: 320px;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+h1,
+h2,
+h3,
+h4,
+form legend {
+  color: $text-color;
+  line-height: 1.6;
+}
+
+h1,
+.h1,
+h2,
+.h2 {
+  font-weight: $font-bold;
+  margin-bottom: 20px;
+}
+
+.h1,
+h1 {
+  font-size: $font-size-h1;
+  margin: 0 0 15px;
+}
+
+.h2,
+h2 {
+  font-size: $font-size-h2-xs;
+
+  @include md {
+    font-size: $font-size-h2-md;
+  }
+}
+
+.h3,
+h3 {
+  font-size: $font-size-h3;
+  font-weight: $font-semibold;
+  // margin: 22px 0 8px;
+}
+
+p {
+  margin: 16px 0;
+}
+
+img {
+  vertical-align: middle;
+}
+
+a,
+button,
+[role='button'],
+input,
+label,
+select,
+textarea {
+  touch-action: manipulation;
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+  color: $link-color;
+  line-height: 1;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+
+  &.active {
+    color: $black;
+  }
+}
+
+[tabindex='-1']:focus {
+  outline: none !important;
+}
+
+// iOS 'clickable elements' fix for role='button'
+[role='button'] {
+  cursor: pointer;
+}

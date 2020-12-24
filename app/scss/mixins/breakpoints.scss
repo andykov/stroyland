@@ -1,0 +1,66 @@
+// Min
+@mixin sm {
+  @media (min-width: #{$screen-sm}) {
+    @content;
+  }
+}
+@mixin md {
+  @media (min-width: #{$screen-md}) {
+    @content;
+  }
+}
+@mixin lg {
+  @media (min-width: #{$screen-lg}) {
+    @content;
+  }
+}
+@mixin xl {
+  @media (min-width: #{$screen-xl}) {
+    @content;
+  }
+}
+
+@mixin xxl {
+  @media (min-width: #{$screen-xxl}) {
+    @content;
+  }
+}
+
+// Max
+@mixin xs-max {
+  @media (max-width: #{$screen-sm - 1}) {
+    @content;
+  }
+}
+@mixin sm-max {
+  @media (max-width: #{$screen-md - 1}) {
+    @content;
+  }
+}
+@mixin md-max {
+  @media (max-width: #{$screen-lg - 1}) {
+    @content;
+  }
+}
+@mixin lg-max {
+  @media (max-width: #{$screen-xl - 1}) {
+    @content;
+  }
+}
+@mixin xl-max {
+  @media (max-width: #{$screen-xxl - 1}) {
+    @content;
+  }
+}
+
+// Custom devices
+@mixin rwd-min($screen) {
+  @media (min-width: $screen+'px') {
+    @content;
+  }
+}
+@mixin rwd-max($screen) {
+  @media (max-width: $screen+'px') {
+    @content;
+  }
+}

@@ -1,0 +1,24 @@
+.filters {
+  display: flex;
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+  }
+}
+
+.sorting {
+  padding-top: 40px;
+
+  a {
+    margin-left: 10px;
+    font-weight: $font-bold;
+    opacity: 0.4;
+  }
+  .active {
+    font-weight: $font-bold;
+    opacity: 1;
+    text-decoration: none;
+  }
+}

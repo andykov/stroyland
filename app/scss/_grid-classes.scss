@@ -1,0 +1,225 @@
+.row {
+  @include row($xs-grid-gutter: $grid-gutter-width - 10);
+}
+
+.col-1 {
+  @include col($screen: xs, $column: 1, $gutter: $grid-gutter-width - 10);
+}
+.col-2 {
+  @include col($screen: xs, $column: 2, $gutter: $grid-gutter-width - 10);
+}
+.col-3 {
+  @include col($screen: xs, $column: 3, $gutter: $grid-gutter-width - 10);
+}
+.col-4 {
+  @include col($screen: xs, $column: 4, $gutter: $grid-gutter-width - 10);
+}
+.col-5 {
+  @include col($screen: xs, $column: 5, $gutter: $grid-gutter-width - 10);
+}
+.col-6 {
+  @include col($screen: xs, $column: 6, $gutter: $grid-gutter-width - 10);
+}
+.col-7 {
+  @include col($screen: xs, $column: 7, $gutter: $grid-gutter-width - 10);
+}
+.col-8 {
+  @include col($screen: xs, $column: 8, $gutter: $grid-gutter-width - 10);
+}
+.col-9 {
+  @include col($screen: xs, $column: 9, $gutter: $grid-gutter-width - 10);
+}
+.col-10 {
+  @include col($screen: xs, $column: 10, $gutter: $grid-gutter-width - 10);
+}
+.col-11 {
+  @include col($screen: xs, $column: 11, $gutter: $grid-gutter-width - 10);
+}
+.col-12 {
+  @include col($screen: xs, $column: 12, $gutter: $grid-gutter-width - 10);
+}
+
+.col-sm-1 {
+  @include col($screen: sm, $column: 1);
+}
+.col-sm-2 {
+  @include col($screen: sm, $column: 2);
+}
+.col-sm-3 {
+  @include col($screen: sm, $column: 3);
+}
+.col-sm-4 {
+  @include col($screen: sm, $column: 4);
+}
+.col-sm-5 {
+  @include col($screen: sm, $column: 5);
+}
+.col-sm-6 {
+  @include col($screen: sm, $column: 6);
+}
+.col-sm-7 {
+  @include col($screen: sm, $column: 7);
+}
+.col-sm-8 {
+  @include col($screen: sm, $column: 8);
+}
+.col-sm-9 {
+  @include col($screen: sm, $column: 9);
+}
+.col-sm-10 {
+  @include col($screen: sm, $column: 10);
+}
+.col-sm-11 {
+  @include col($screen: sm, $column: 11);
+}
+.col-sm-12 {
+  @include col($screen: sm, $column: 12);
+}
+
+.col-md-1 {
+  @include col($screen: md, $column: 1);
+}
+.col-md-2 {
+  @include col($screen: md, $column: 2);
+}
+.col-md-3 {
+  @include col($screen: md, $column: 3);
+}
+.col-md-4 {
+  @include col($screen: md, $column: 4);
+}
+.col-md-5 {
+  @include col($screen: md, $column: 5);
+}
+.col-md-6 {
+  @include col($screen: md, $column: 6);
+}
+.col-md-7 {
+  @include col($screen: md, $column: 7);
+}
+.col-md-8 {
+  @include col($screen: md, $column: 8);
+}
+.col-md-9 {
+  @include col($screen: md, $column: 9);
+}
+.col-md-10 {
+  @include col($screen: md, $column: 10);
+}
+.col-md-11 {
+  @include col($screen: md, $column: 11);
+}
+.col-md-12 {
+  @include col($screen: md, $column: 12);
+}
+
+.col-lg-1 {
+  @include col($screen: lg, $column: 1);
+}
+.col-lg-2 {
+  @include col($screen: lg, $column: 2);
+}
+.col-lg-3 {
+  @include col($screen: lg, $column: 3);
+}
+.col-lg-4 {
+  @include col($screen: lg, $column: 4);
+}
+.col-lg-5 {
+  @include col($screen: lg, $column: 5);
+}
+.col-lg-6 {
+  @include col($screen: lg, $column: 6);
+}
+.col-lg-7 {
+  @include col($screen: lg, $column: 7);
+}
+.col-lg-8 {
+  @include col($screen: lg, $column: 8);
+}
+.col-lg-9 {
+  @include col($screen: lg, $column: 9);
+}
+.col-lg-10 {
+  @include col($screen: lg, $column: 10);
+}
+.col-lg-11 {
+  @include col($screen: lg, $column: 11);
+}
+.col-lg-12 {
+  @include col($screen: lg, $column: 12);
+}
+
+.col-xl-1 {
+  @include col($screen: xl, $column: 1);
+}
+.col-xl-2 {
+  @include col($screen: xl, $column: 2);
+}
+.col-xl-3 {
+  @include col($screen: xl, $column: 3);
+}
+.col-xl-4 {
+  @include col($screen: xl, $column: 4);
+}
+.col-xl-5 {
+  @include col($screen: xl, $column: 5);
+}
+.col-xl-6 {
+  @include col($screen: xl, $column: 6);
+}
+.col-xl-7 {
+  @include col($screen: xl, $column: 7);
+}
+.col-xl-8 {
+  @include col($screen: xl, $column: 8);
+}
+.col-xl-9 {
+  @include col($screen: xl, $column: 9);
+}
+.col-xl-10 {
+  @include col($screen: xl, $column: 10);
+}
+.col-xl-11 {
+  @include col($screen: xl, $column: 11);
+}
+.col-xl-12 {
+  @include col($screen: xl, $column: 12);
+}
+
+.col-xxl-1 {
+  @include col($screen: xxl, $column: 1);
+}
+.col-xxl-2 {
+  @include col($screen: xxl, $column: 2);
+}
+.col-xxl-3 {
+  @include col($screen: xxl, $column: 3);
+}
+.col-xxl-4 {
+  @include col($screen: xxl, $column: 4);
+}
+.col-xxl-5 {
+  @include col($screen: xxl, $column: 5);
+}
+.col-xxl-6 {
+  @include col($screen: xxl, $column: 6);
+}
+.col-xxl-7 {
+  @include col($screen: xxl, $column: 7);
+}
+.col-xxl-8 {
+  @include col($screen: xxl, $column: 8);
+}
+.col-xxl-9 {
+  @include col($screen: xxl, $column: 9);
+}
+.col-xxl-10 {
+  @include col($screen: xxl, $column: 10);
+}
+.col-xxl-11 {
+  @include col($screen: xxl, $column: 11);
+}
+.col-xxl-12 {
+  @include col($screen: xxl, $column: 12);
+}

@@ -1,0 +1,43 @@
+.scroll-off {
+  overflow: hidden !important;
+}
+
+.pt-30 {
+  padding-top: 30px !important;
+}
+
+.bold {
+  font-weight: $font-bold !important;
+}
+
+.medium {
+  font-weight: $font-medium !important;
+}
+
+.semibold {
+  font-weight: $font-semibold !important;
+}
+.centered {
+  text-align: center;
+}
+.bg-black {
+  background-color: #1c1c1c;
+}
+
+.link-arrow {
+  display: inline-flex;
+  align-items: center;
+
+  &:after {
+    content: '';
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    margin-left: 5px;
+    border: 1px solid #111111;
+    border-color: $black;
+    border-style: solid;
+    border-width: 1px 1px 0 0;
+    transform: rotate(45deg);
+  }
+}

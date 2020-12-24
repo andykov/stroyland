@@ -1,0 +1,196 @@
+.footer {
+  padding: 20px 0 10px;
+  color: #f6f6f7;
+  background: rgb(79, 98, 221);
+  background: linear-gradient(
+    90deg,
+    rgba(79, 98, 221, 1) 0%,
+    rgba(44, 156, 221, 1) 50%,
+    rgba(79, 98, 221, 1) 100%
+  );
+
+  div[class*='col-'] {
+    @include md-max {
+      margin-bottom: 20px;
+    }
+  }
+
+  p {
+    margin: 10px 0;
+  }
+
+  &__title {
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: none;
+    line-height: 1;
+    margin-bottom: 10px;
+
+    @include md {
+      font-size: 24px;
+    }
+  }
+
+  &__social {
+    .footer__title {
+      text-align: right;
+    }
+  }
+
+  &__nav {
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    a {
+      display: inline-block;
+      font-size: 14px;
+      padding: 0 6px;
+      border-left: 1px solid transparent;
+      color: #f6f6f7;
+      transition: border-color $transition-time;
+
+      &:hover {
+        border-color: #f6f6f7;
+      }
+    }
+  }
+
+  &__contacts {
+    font-size: 14px;
+    text-transform: uppercase;
+
+    ul {
+      list-style: none;
+      padding: 4px 0 0;
+      margin: 0;
+    }
+    a[href*='tel:'] {
+      font-size: 18px;
+      color: #f6f6f7;
+    }
+  }
+
+  &__bottom-panel {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid #fff;
+    padding-top: 10px;
+    margin-top: 12px;
+    @include md {
+      justify-content: space-between;
+    }
+
+    span {
+      &:first-child {
+        font-size: 16px;
+
+        @include md {
+          font-size: 24px;
+        }
+      }
+      &:last-child {
+        font-size: 8px;
+        line-height: 1.2;
+        text-align: right;
+        @include md {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+.social {
+  padding-top: 6px;
+
+  &__title {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1;
+    text-align: right;
+    @include md {
+      font-size: 18px;
+    }
+  }
+
+  &__icon {
+    display: block;
+    width: 36px;
+    height: 36px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    &--dzen {
+      background-image: url('../img/icons/icon-dzen.png');
+    }
+    &--in {
+      background-image: url('../img/icons/icon-inst.png');
+    }
+    &--vk {
+      background-image: url('../img/icons/icon-vk.png');
+    }
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    padding: 10px 0;
+    margin-left: 24px;
+  }
+}
+
+.rating-store {
+  padding-top: 15px;
+  text-align: right;
+
+  &__title {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1;
+    text-align: right;
+    @include md {
+      font-size: 18px;
+    }
+  }
+
+  &__stars {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 3px 0;
+
+    span {
+      cursor: default;
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      margin-top: auto;
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='126.729' height='126.73'%3e%3cpath fill='%23ffffff' d='M121.215 44.212l-34.899-3.3c-2.2-.2-4.101-1.6-5-3.7l-12.5-30.3c-2-5-9.101-5-11.101 0l-12.4 30.3c-.8 2.1-2.8 3.5-5 3.7l-34.9 3.3c-5.2.5-7.3 7-3.4 10.5l26.3 23.1c1.7 1.5 2.4 3.7 1.9 5.9l-7.9 32.399c-1.2 5.101 4.3 9.3 8.9 6.601l29.1-17.101c1.9-1.1 4.2-1.1 6.1 0l29.101 17.101c4.6 2.699 10.1-1.4 8.899-6.601l-7.8-32.399c-.5-2.2.2-4.4 1.9-5.9l26.3-23.1c3.8-3.5 1.6-10-3.6-10.5z'/%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 76%;
+      -webkit-transition: 0.3s;
+      transition: 0.3s;
+    }
+
+    span.star-on {
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='126.729' height='126.73'%3e%3cpath fill='%23fcda00' d='M121.215 44.212l-34.899-3.3c-2.2-.2-4.101-1.6-5-3.7l-12.5-30.3c-2-5-9.101-5-11.101 0l-12.4 30.3c-.8 2.1-2.8 3.5-5 3.7l-34.9 3.3c-5.2.5-7.3 7-3.4 10.5l26.3 23.1c1.7 1.5 2.4 3.7 1.9 5.9l-7.9 32.399c-1.2 5.101 4.3 9.3 8.9 6.601l29.1-17.101c1.9-1.1 4.2-1.1 6.1 0l29.101 17.101c4.6 2.699 10.1-1.4 8.899-6.601l-7.8-32.399c-.5-2.2.2-4.4 1.9-5.9l26.3-23.1c3.8-3.5 1.6-10-3.6-10.5z'/%3e%3c/svg%3e");
+    }
+  }
+}
