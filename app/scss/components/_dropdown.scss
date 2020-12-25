@@ -2,7 +2,20 @@
   position: relative;
   > span {
     color: #a2a6a7;
+    padding-right: 30px;
     cursor: default;
+
+    &::after {
+      content: '';
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      width: 8px;
+      height: 8px;
+      border-bottom: 1px solid currentColor;
+      border-right: 1px solid currentColor;
+      transform: translateY(-70%) rotate(45deg);
+    }
   }
   &__body {
     position: absolute;
@@ -39,6 +52,10 @@
     }
     > span {
       color: #353839;
+
+      &::after {
+        transform: translateY(-30%) rotate(225deg);
+      }
     }
   }
 }
