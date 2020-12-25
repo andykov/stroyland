@@ -78,8 +78,16 @@ document.addEventListener(
 navClose.addEventListener('click', mobileNavClose);
 navBack.addEventListener('click', mobileNavBack);
 
-navTrigger.addEventListener('mouseenter', navMouseOver, false);
-nav.addEventListener('mouseleave', navMouseOut, false);
+if (isTouchDevice()) {
+  navTrigger.addEventListener('click', function () {
+    body.classList.toggle('scroll-off');
+    this.classList.toggle('active');
+    navCategory.classList.toggle('show');
+  });
+} else {
+  navTrigger.addEventListener('mouseenter', navMouseOver, false);
+  nav.addEventListener('mouseleave', navMouseOut, false);
+}
 
 // navTrigger.addEventListener('click', function () {
 //   if (isTouchDevice()) {
