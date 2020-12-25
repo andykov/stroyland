@@ -10,11 +10,14 @@
 
   .nav-item {
     display: inline-flex;
+    justify-content: center;
     align-items: center;
     padding: 14px 10px;
     font-size: 16px;
     line-height: 1;
     color: #fff;
+
+    transition: all $transition-time;
 
     @include md {
       font-size: 18px;
@@ -22,8 +25,6 @@
 
     &--home {
       width: 43px;
-      background: url('../img/icons/icon-home.png') no-repeat center;
-
       @include md {
         width: 93px;
       }
@@ -34,19 +35,24 @@
       }
       &::before {
         content: '';
+        width: 24px;
+        height: 17px;
+        margin-right: 9px;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 112.95 80' width='24' height='17' fill='%23ffffff'%3E%3Crect width='112.95' height='16' rx='2'%3E%3C/rect%3E%3Crect y='30' width='112.95' height='16' rx='2'%3E%3C/rect%3E%3Crect y='60' width='112.95' height='16' rx='2'%3E%3C/rect%3E%3C/svg%3E");
       }
+      &:hover,
       &.active {
         background-color: #38bced;
         color: #3c3c3c;
+
+        &::before {
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 112.95 80' width='24' height='17' fill='%233e3e3e'%3E%3Crect width='112.95' height='16' rx='2'%3E%3C/rect%3E%3Crect y='30' width='112.95' height='16' rx='2'%3E%3C/rect%3E%3Crect y='60' width='112.95' height='16' rx='2'%3E%3C/rect%3E%3C/svg%3E");
+        }
       }
     }
     &--stock {
-      &::before {
-        content: '';
-        width: 20px;
-        height: 18px;
-        background: url('../img/icons/icon-stock.png') no-repeat center /
-          contain;
+      svg {
+        margin-right: 5px;
         margin-right: 5px;
       }
     }
@@ -95,7 +101,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     overflow: hidden;
     background-color: #fbfcfd;
     box-shadow: 4px 4px 4px 0 rgba($color: #82a7b7, $alpha: 0.5);
@@ -212,7 +218,140 @@
     &__item {
       a {
         display: flex;
+        align-items: center;
         padding: 10px;
+
+        &.icon-nav {
+          &::before {
+            content: '';
+            width: 32px;
+            height: 32px;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin-right: 15px;
+          }
+
+          &--1 {
+            &::before {
+              background-image: url('../img/icons/icon-nav-1.png');
+            }
+            &:hover {
+              &::before {
+                background-image: url('../img/icons/icon-nav-1-active.png');
+              }
+            }
+          }
+          &--2 {
+            &::before {
+              background-image: url('../img/icons/icon-nav-2.png');
+            }
+            &:hover {
+              &::before {
+                background-image: url('../img/icons/icon-nav-2-active.png');
+              }
+            }
+          }
+          &--3 {
+            &::before {
+              background-image: url('../img/icons/icon-nav-3.png');
+            }
+            &:hover {
+              &::before {
+                background-image: url('../img/icons/icon-nav-3-active.png');
+              }
+            }
+          }
+          &--4 {
+            &::before {
+              background-image: url('../img/icons/icon-nav-4.png');
+            }
+            &:hover {
+              &::before {
+                background-image: url('../img/icons/icon-nav-4-active.png');
+              }
+            }
+          }
+          &--5 {
+            &::before {
+              background-image: url('../img/icons/icon-nav-5.png');
+            }
+            &:hover {
+              &::before {
+                background-image: url('../img/icons/icon-nav-5-active.png');
+              }
+            }
+          }
+          &--6 {
+            &::before {
+              background-image: url('../img/icons/icon-nav-6.png');
+            }
+            &:hover {
+              &::before {
+                background-image: url('../img/icons/icon-nav-6-active.png');
+              }
+            }
+          }
+          &--7 {
+            &::before {
+              background-image: url('../img/icons/icon-nav-7.png');
+            }
+            &:hover {
+              &::before {
+                background-image: url('../img/icons/icon-nav-7-active.png');
+              }
+            }
+          }
+          &--8 {
+            &::before {
+              background-image: url('../img/icons/icon-nav-8.png');
+            }
+            &:hover {
+              &::before {
+                background-image: url('../img/icons/icon-nav-8-active.png');
+              }
+            }
+          }
+          &--9 {
+            &::before {
+              background-image: url('../img/icons/icon-nav-9.png');
+            }
+            &:hover {
+              &::before {
+                background-image: url('../img/icons/icon-nav-9-active.png');
+              }
+            }
+          }
+          &--10 {
+            &::before {
+              background-image: url('../img/icons/icon-nav-10.png');
+            }
+            &:hover {
+              &::before {
+                background-image: url('../img/icons/icon-nav-10-active.png');
+              }
+            }
+          }
+          &--11 {
+            &::before {
+              background-image: url('../img/icons/icon-nav-11.png');
+            }
+            &:hover {
+              &::before {
+                background-image: url('../img/icons/icon-nav-11-active.png');
+              }
+            }
+          }
+          &--12 {
+            &::before {
+              background-image: url('../img/icons/icon-nav-12.png');
+            }
+            &:hover {
+              &::before {
+                background-image: url('../img/icons/icon-nav-12-active.png');
+              }
+            }
+          }
+        }
 
         @include md-max {
           pointer-events: none;
@@ -229,6 +368,13 @@
             color: #a8acad;
             font-size: 12px;
             text-transform: lowercase;
+          }
+        }
+
+        &:hover {
+          background-color: #2d9add;
+          span {
+            color: #fff;
           }
         }
       }
@@ -331,6 +477,9 @@
       color: #27a4dd;
       padding: 0;
       border: 0;
+      &:focus {
+        outline: none;
+      }
     }
   }
 }

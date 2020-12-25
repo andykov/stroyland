@@ -9,6 +9,10 @@
     <meta property="og:image" content="img/dest/preview.jpg" />
     <link rel="stylesheet" href="css/vendor/splide-core.min.css" />
     <link rel="stylesheet" href="css/app.min.css" />
+    <script
+      defer
+      src="../../node_modules/svg4everybody/dist/svg4everybody.min.js"
+    ></script>
   </head>
   <body>
     @@include('modules/_header.html')
@@ -105,7 +109,9 @@
               <div class="col-12 col-lg-4">
                 <div class="advantage__item">
                   <div class="advantage__icon">
-                    <img src="img/icons/advant-pay.png" alt="" />
+                    <svg class="icon icon--blue" width="70" height="70">
+                      <use xlink:href="img/icons.svg#credit-card"></use>
+                    </svg>
                   </div>
                   <span>Все виды оплаты</span>
                 </div>
@@ -113,7 +119,9 @@
               <div class="col-12 col-lg-4">
                 <div class="advantage__item">
                   <div class="advantage__icon">
-                    <img src="img/icons/advant-delivery.png" alt="" />
+                    <svg class="icon icon--blue" width="70" height="70">
+                      <use xlink:href="img/icons.svg#truck"></use>
+                    </svg>
                   </div>
                   <span>Доставка по всей России</span>
                 </div>
@@ -121,7 +129,9 @@
               <div class="col-12 col-lg-4">
                 <div class="advantage__item">
                   <div class="advantage__icon">
-                    <img src="img/icons/advant-pickup.png" alt="" />
+                    <svg class="icon icon--blue" width="70" height="70">
+                      <use xlink:href="img/icons.svg#delivery-man"></use>
+                    </svg>
                   </div>
                   <span>Самовызов без перерывов и выходных</span>
                 </div>
@@ -283,16 +293,36 @@
           <div class="product-gallery">
             <div class="product-gallery__tabs" data-gallery-tabs>
               <button>
-                <span><i class="icon icon--sale"></i>Распродажа</span>
+                <span>
+                  <svg class="icon icon--blue" width="15" height="15">
+                    <use xlink:href="img/icons.svg#percent"></use>
+                  </svg>
+                  Распродажа
+                </span>
               </button>
               <button>
-                <span><i class="icon icon--good"></i>Рекомендуем</span>
+                <span>
+                  <svg class="icon icon--blue" width="17" height="17">
+                    <use xlink:href="img/icons.svg#recommend"></use>
+                  </svg>
+                  Рекомендуем
+                </span>
               </button>
               <button>
-                <span><i class="icon icon--best"></i>Бестселлеры</span>
+                <span>
+                  <svg class="icon icon--blue" width="17" height="17">
+                    <use xlink:href="img/icons.svg#best"></use>
+                  </svg>
+                  Бестселлеры
+                </span>
               </button>
               <button>
-                <span><i class="icon icon--new"></i>Новинки</span>
+                <span>
+                  <svg class="icon icon--blue" width="17" height="17">
+                    <use xlink:href="img/icons.svg#new"></use>
+                  </svg>
+                  Новинки
+                </span>
               </button>
             </div>
 
@@ -339,7 +369,11 @@
                                 data-field="quantity"
                               />
                             </div>
-                            <button class="product__tocart"></button>
+                            <button class="product__tocart">
+                              <svg width="19" height="18">
+                                <use xlink:href="img/icons.svg#cart"></use>
+                              </svg>
+                            </button>
                           </div>
                         </div>
                       </div>
@@ -381,7 +415,11 @@
                                 data-field="quantity"
                               />
                             </div>
-                            <button class="product__tocart"></button>
+                            <button class="product__tocart">
+                              <svg width="19" height="18">
+                                <use xlink:href="img/icons.svg#cart"></use>
+                              </svg>
+                            </button>
                           </div>
                         </div>
                       </div>
@@ -423,7 +461,11 @@
                                 data-field="quantity"
                               />
                             </div>
-                            <button class="product__tocart"></button>
+                            <button class="product__tocart">
+                              <svg width="19" height="18">
+                                <use xlink:href="img/icons.svg#cart"></use>
+                              </svg>
+                            </button>
                           </div>
                         </div>
                       </div>
@@ -465,7 +507,11 @@
                                 data-field="quantity"
                               />
                             </div>
-                            <button class="product__tocart"></button>
+                            <button class="product__tocart">
+                              <svg width="19" height="18">
+                                <use xlink:href="img/icons.svg#cart"></use>
+                              </svg>
+                            </button>
                           </div>
                         </div>
                       </div>
@@ -507,7 +553,11 @@
                                 data-field="quantity"
                               />
                             </div>
-                            <button class="product__tocart"></button>
+                            <button class="product__tocart">
+                              <svg width="19" height="18">
+                                <use xlink:href="img/icons.svg#cart"></use>
+                              </svg>
+                            </button>
                           </div>
                         </div>
                       </div>
@@ -549,7 +599,11 @@
                                 data-field="quantity"
                               />
                             </div>
-                            <button class="product__tocart"></button>
+                            <button class="product__tocart">
+                              <svg width="19" height="18">
+                                <use xlink:href="img/icons.svg#cart"></use>
+                              </svg>
+                            </button>
                           </div>
                         </div>
                       </div>
@@ -591,7 +645,11 @@
                                 data-field="quantity"
                               />
                             </div>
-                            <button class="product__tocart"></button>
+                            <button class="product__tocart">
+                              <svg width="19" height="18">
+                                <use xlink:href="img/icons.svg#cart"></use>
+                              </svg>
+                            </button>
                           </div>
                         </div>
                       </div>
@@ -640,7 +698,11 @@
                                 data-field="quantity"
                               />
                             </div>
-                            <button class="product__tocart"></button>
+                            <button class="product__tocart">
+                              <svg width="19" height="18">
+                                <use xlink:href="img/icons.svg#cart"></use>
+                              </svg>
+                            </button>
                           </div>
                         </div>
                       </div>
@@ -677,7 +739,11 @@
                                 data-field="quantity"
                               />
                             </div>
-                            <button class="product__tocart"></button>
+                            <button class="product__tocart">
+                              <svg width="19" height="18">
+                                <use xlink:href="img/icons.svg#cart"></use>
+                              </svg>
+                            </button>
                           </div>
                         </div>
                       </div>
@@ -714,7 +780,11 @@
                                 data-field="quantity"
                               />
                             </div>
-                            <button class="product__tocart"></button>
+                            <button class="product__tocart">
+                              <svg width="19" height="18">
+                                <use xlink:href="img/icons.svg#cart"></use>
+                              </svg>
+                            </button>
                           </div>
                         </div>
                       </div>
@@ -751,7 +821,11 @@
                                 data-field="quantity"
                               />
                             </div>
-                            <button class="product__tocart"></button>
+                            <button class="product__tocart">
+                              <svg width="19" height="18">
+                                <use xlink:href="img/icons.svg#cart"></use>
+                              </svg>
+                            </button>
                           </div>
                         </div>
                       </div>
@@ -788,7 +862,11 @@
                                 data-field="quantity"
                               />
                             </div>
-                            <button class="product__tocart"></button>
+                            <button class="product__tocart">
+                              <svg width="19" height="18">
+                                <use xlink:href="img/icons.svg#cart"></use>
+                              </svg>
+                            </button>
                           </div>
                         </div>
                       </div>
@@ -825,7 +903,11 @@
                                 data-field="quantity"
                               />
                             </div>
-                            <button class="product__tocart"></button>
+                            <button class="product__tocart">
+                              <svg width="19" height="18">
+                                <use xlink:href="img/icons.svg#cart"></use>
+                              </svg>
+                            </button>
                           </div>
                         </div>
                       </div>
@@ -862,7 +944,11 @@
                                 data-field="quantity"
                               />
                             </div>
-                            <button class="product__tocart"></button>
+                            <button class="product__tocart">
+                              <svg width="19" height="18">
+                                <use xlink:href="img/icons.svg#cart"></use>
+                              </svg>
+                            </button>
                           </div>
                         </div>
                       </div>
@@ -899,7 +985,11 @@
                                 data-field="quantity"
                               />
                             </div>
-                            <button class="product__tocart"></button>
+                            <button class="product__tocart">
+                              <svg width="19" height="18">
+                                <use xlink:href="img/icons.svg#cart"></use>
+                              </svg>
+                            </button>
                           </div>
                         </div>
                       </div>
@@ -948,7 +1038,11 @@
                                 data-field="quantity"
                               />
                             </div>
-                            <button class="product__tocart"></button>
+                            <button class="product__tocart">
+                              <svg width="19" height="18">
+                                <use xlink:href="img/icons.svg#cart"></use>
+                              </svg>
+                            </button>
                           </div>
                         </div>
                       </div>
@@ -985,7 +1079,11 @@
                                 data-field="quantity"
                               />
                             </div>
-                            <button class="product__tocart"></button>
+                            <button class="product__tocart">
+                              <svg width="19" height="18">
+                                <use xlink:href="img/icons.svg#cart"></use>
+                              </svg>
+                            </button>
                           </div>
                         </div>
                       </div>
@@ -1022,7 +1120,11 @@
                                 data-field="quantity"
                               />
                             </div>
-                            <button class="product__tocart"></button>
+                            <button class="product__tocart">
+                              <svg width="19" height="18">
+                                <use xlink:href="img/icons.svg#cart"></use>
+                              </svg>
+                            </button>
                           </div>
                         </div>
                       </div>
@@ -1071,7 +1173,11 @@
                                 data-field="quantity"
                               />
                             </div>
-                            <button class="product__tocart"></button>
+                            <button class="product__tocart">
+                              <svg width="19" height="18">
+                                <use xlink:href="img/icons.svg#cart"></use>
+                              </svg>
+                            </button>
                           </div>
                         </div>
                       </div>
@@ -1108,7 +1214,11 @@
                                 data-field="quantity"
                               />
                             </div>
-                            <button class="product__tocart"></button>
+                            <button class="product__tocart">
+                              <svg width="19" height="18">
+                                <use xlink:href="img/icons.svg#cart"></use>
+                              </svg>
+                            </button>
                           </div>
                         </div>
                       </div>
@@ -1145,7 +1255,11 @@
                                 data-field="quantity"
                               />
                             </div>
-                            <button class="product__tocart"></button>
+                            <button class="product__tocart">
+                              <svg width="19" height="18">
+                                <use xlink:href="img/icons.svg#cart"></use>
+                              </svg>
+                            </button>
                           </div>
                         </div>
                       </div>
@@ -1182,7 +1296,11 @@
                                 data-field="quantity"
                               />
                             </div>
-                            <button class="product__tocart"></button>
+                            <button class="product__tocart">
+                              <svg width="19" height="18">
+                                <use xlink:href="img/icons.svg#cart"></use>
+                              </svg>
+                            </button>
                           </div>
                         </div>
                       </div>
@@ -1219,7 +1337,11 @@
                                 data-field="quantity"
                               />
                             </div>
-                            <button class="product__tocart"></button>
+                            <button class="product__tocart">
+                              <svg width="19" height="18">
+                                <use xlink:href="img/icons.svg#cart"></use>
+                              </svg>
+                            </button>
                           </div>
                         </div>
                       </div>
@@ -1256,7 +1378,11 @@
                                 data-field="quantity"
                               />
                             </div>
-                            <button class="product__tocart"></button>
+                            <button class="product__tocart">
+                              <svg width="19" height="18">
+                                <use xlink:href="img/icons.svg#cart"></use>
+                              </svg>
+                            </button>
                           </div>
                         </div>
                       </div>
@@ -1293,7 +1419,11 @@
                                 data-field="quantity"
                               />
                             </div>
-                            <button class="product__tocart"></button>
+                            <button class="product__tocart">
+                              <svg width="19" height="18">
+                                <use xlink:href="img/icons.svg#cart"></use>
+                              </svg>
+                            </button>
                           </div>
                         </div>
                       </div>
@@ -1387,5 +1517,8 @@
     <script src="js/vendor/tabbis.min.js"></script>
     <script src="js/vendor/splide.min.js"></script>
     <script src="js/main.min.js"></script>
+    <script>
+      svg4everybody();
+    </script>
   </body>
 </html>

@@ -1,3 +1,7 @@
+// import svg4everybody from 'svg4everybody';
+
+// const svg4everybody = require('../../node_modules/svg4everybody').svg4everybody;
+
 function getSiblings(e) {
   let siblings = [];
 
@@ -32,6 +36,7 @@ tabbis({
 });
 
 let body = document.querySelector('body'),
+  nav = document.querySelector('.nav'),
   navTrigger = document.querySelector('.js-nav-trigger'),
   navClose = document.querySelector('.js-nav-close'),
   navBack = document.querySelector('.js-nav-back'),
@@ -62,7 +67,6 @@ function mobileNavBack() {
 document.addEventListener(
   'tabbis',
   (e) => {
-    console.log(e);
     let data = e.detail;
     let siblings = getSiblings(data.tab);
     siblings.forEach(function (item) {
@@ -78,19 +82,43 @@ document.addEventListener(
 navClose.addEventListener('click', mobileNavClose);
 navBack.addEventListener('click', mobileNavBack);
 
-navTrigger.addEventListener('click', function () {
+navTrigger.addEventListener('mouseenter', navMouseOver, false);
+nav.addEventListener('mouseleave', navMouseOut, false);
+
+// navTrigger.addEventListener('click', function () {
+//   if (isTouchDevice()) {
+//     body.classList.toggle('scroll-off');
+//   }
+//   this.classList.toggle('active');
+//   navCategory.classList.toggle('show');
+// });
+
+function navMouseOver(event) {
   if (isTouchDevice()) {
     body.classList.toggle('scroll-off');
   }
-  this.classList.toggle('active');
-  navCategory.classList.toggle('show');
-});
+  if (navTrigger.contains(event.target)) {
+    navCategory.classList.add('show');
+  }
+}
+
+function navMouseOut(event) {
+  if (!navSubCategory.classList.contains('show')) {
+    navCategory.classList.remove('show');
+  } else {
+    navCategory.classList.remove('show');
+    navSubCategory.classList.remove('show');
+    navBack.classList.remove('show');
+    body.classList.remove('scroll-off');
+  }
+}
 
 let specBtn = document.querySelectorAll('.js-nav-subcategory');
 if (specBtn) {
   specBtn.forEach(function (btn) {
     btn.addEventListener('click', function (event) {
       event.stopPropagation();
+      event.target.style.display = 'none';
       let stopItem = btn.parentNode.querySelector('[hidden]');
       stopItem.toggleAttribute('hidden');
       this.classList.toggle('active');
@@ -108,7 +136,11 @@ let promoSlider = new Splide('.promo .splide', {
   perPage: 2,
   perMove: 1,
   pagination: false,
+  autoplay: true,
   breakpoints: {
+    1024: {
+      arrows: false,
+    },
     556: {
       perPage: 1,
     },
@@ -120,6 +152,12 @@ promoSlider.mount();
 let bannerSlider = new Splide('.banner .splide', {
   perPage: 1,
   perMove: 1,
+  autoplay: true,
+  breakpoints: {
+    1024: {
+      arrows: false,
+    },
+  },
 });
 bannerSlider.mount();
 
@@ -128,7 +166,11 @@ let lastNewsSlider = new Splide('.last-news .splide', {
   perPage: 3,
   perMove: 1,
   pagination: false,
+  autoplay: true,
   breakpoints: {
+    1024: {
+      arrows: false,
+    },
     767: {
       perPage: 2,
     },
@@ -193,7 +235,6 @@ galleryTabs.forEach(function (tab, i) {
 
     // remove
     let siblingsTabs = getSiblings(target);
-    console.log(target);
     siblingsTabs.forEach(function (item) {
       item.classList.remove('active');
     });
@@ -253,4 +294,19 @@ for (const field of fieldsQuantitys) {
       decrementValue(event);
     }
   });
+}
+
+document.addEventListener('click', function (event) {
+  // check click outside menu
+  if (isOutsideClick('.nav', event.target)) {
+    navCategory.classList.remove('show');
+    navSubCategory.classList.remove('show');
+    navBack.classList.remove('show');
+    body.classList.remove('scroll-off');
+  }
+});
+
+function isOutsideClick(ignor, target) {
+  var ignoreElement = document.querySelector(ignor);
+  return !ignoreElement.contains(target);
 }

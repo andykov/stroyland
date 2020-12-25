@@ -128,55 +128,9 @@
           color: #353839;
         }
 
-        &::before {
-          content: '';
-          display: inline-flex;
-          width: 24px;
-          height: 24px;
-          background-repeat: no-repeat;
-          background-position: center;
+        svg {
           margin: 0 auto 4px;
-        }
-
-        &--phone {
-          &::before {
-            background-image: url('../img/icons/icon-phone.png');
-          }
-          &:hover {
-            &::before {
-              background-image: url('../img/icons/icon-phone-active.png');
-            }
-          }
-        }
-        &--compare {
-          &::before {
-            background-image: url('../img/icons/icon-compare.png');
-          }
-          &:hover {
-            &::before {
-              background-image: url('../img/icons/icon-compare-active.png');
-            }
-          }
-        }
-        &--favor {
-          &::before {
-            background-image: url('../img/icons/icon-favorite.png');
-          }
-          &:hover {
-            &::before {
-              background-image: url('../img/icons/icon-favorite-active.png');
-            }
-          }
-        }
-        &--cart {
-          &::before {
-            background-image: url('../img/icons/icon-basket.png');
-          }
-          &:hover {
-            &::before {
-              background-image: url('../img/icons/icon-basket-active.png');
-            }
-          }
+          fill: #27a4dd;
         }
       }
     }
@@ -251,8 +205,15 @@
       height: 35px;
       border: 0;
       padding: 0;
-      margin-left: -1px;
-      background: #27a4dd url('../img/icons/icon-search.png') no-repeat center;
+      background-color: #27a4dd;
+      transition: $transition-time;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      svg {
+        fill: #fff;
+      }
       &:focus {
         outline: none;
       }
@@ -384,6 +345,21 @@
     display: flex;
     align-items: center;
     margin-left: auto;
+
+    .icon-user {
+      position: relative;
+      padding-left: 54px;
+
+      svg {
+        fill: currentColor;
+        position: absolute;
+        transform: translate((-100%), -50%);
+        top: 50%;
+        margin-left: -6px;
+        display: inline-block;
+        vertical-align: middle;
+      }
+    }
 
     @include lg {
       margin-left: 10px;
