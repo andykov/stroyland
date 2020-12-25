@@ -9,10 +9,6 @@
     <meta property="og:image" content="img/dest/preview.jpg" />
     <link rel="stylesheet" href="css/vendor/splide-core.min.css" />
     <link rel="stylesheet" href="css/app.min.css" />
-    <script
-      defer
-      src="../../node_modules/svg4everybody/dist/svg4everybody.min.js"
-    ></script>
   </head>
   <body>
     <header class="header">
@@ -28,8 +24,13 @@
           <li>
             <a href="">Магазины</a>
           </li>
-          <li>
-            <a href="">Покупателям</a>
+          <li class="dropdown">
+            <span>Покупателям</span>
+            <div class="dropdown__body">
+              <a href="#">Link 1</a>
+              <a href="#">Link 2</a>
+              <a href="#">Link 3</a>
+            </div>
           </li>
           <li>
             <a href="">Юридическим лицам</a>
@@ -2077,6 +2078,7 @@
   </div>
 </footer>
 
+    <script src="js/vendor/svg4everybody.js"></script>
     <script src="js/vendor/tabbis.min.js"></script>
     <script src="js/vendor/splide.min.js"></script>
     <script src="js/main.min.js"></script>

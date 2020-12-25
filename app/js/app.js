@@ -1,7 +1,3 @@
-// import svg4everybody from 'svg4everybody';
-
-// const svg4everybody = require('../../node_modules/svg4everybody').svg4everybody;
-
 function getSiblings(e) {
   let siblings = [];
 
@@ -169,13 +165,15 @@ let lastNewsSlider = new Splide('.last-news .splide', {
   autoplay: true,
   breakpoints: {
     1024: {
-      arrows: false,
+      arrows: true,
     },
     767: {
       perPage: 2,
+      arrows: false,
     },
     639: {
       perPage: 1,
+      arrows: false,
     },
   },
 });
@@ -191,18 +189,25 @@ const productGalleryOptions = {
   perMove: 1,
   pagination: false,
   gap: 30,
+  autoplay: true,
   breakpoints: {
     1200: {
       perPage: 5,
     },
+    1024: {
+      arrows: true,
+    },
     992: {
       perPage: 4,
+      arrows: false,
     },
     767: {
       perPage: 2,
+      arrows: false,
     },
     639: {
       perPage: 1,
+      arrows: false,
     },
   },
 };
