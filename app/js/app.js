@@ -89,14 +89,6 @@ if (isTouchDevice()) {
   nav.addEventListener('mouseleave', navMouseOut, false);
 }
 
-// navTrigger.addEventListener('click', function () {
-//   if (isTouchDevice()) {
-//     body.classList.toggle('scroll-off');
-//   }
-//   this.classList.toggle('active');
-//   navCategory.classList.toggle('show');
-// });
-
 function navMouseOver(event) {
   if (isTouchDevice()) {
     body.classList.toggle('scroll-off');
