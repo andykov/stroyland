@@ -129,6 +129,7 @@ function isHidden(el) {
 
 // Promo slider
 let promoSlider = new Splide('.promo .splide', {
+  type: 'loop',
   perPage: 2,
   perMove: 1,
   pagination: false,
@@ -146,6 +147,7 @@ promoSlider.mount();
 
 // Slider banner
 let bannerSlider = new Splide('.banner .splide', {
+  type: 'loop',
   perPage: 1,
   perMove: 1,
   autoplay: true,
@@ -159,6 +161,7 @@ bannerSlider.mount();
 
 // SLider Last News
 let lastNewsSlider = new Splide('.last-news .splide', {
+  type: 'loop',
   perPage: 3,
   perMove: 1,
   pagination: false,
@@ -185,6 +188,7 @@ const galleryItems = document.querySelectorAll('[data-gallery-item]');
 
 // init first gallery
 const productGalleryOptions = {
+  type: 'loop',
   perPage: 6,
   perMove: 1,
   pagination: false,
