@@ -419,6 +419,7 @@
       overflow-y: auto;
       animation: mobileNavDisplayInDesktop 0.3s ease;
       padding: 15px 30px;
+      outline: none;
 
       @include md-max {
         position: absolute;
