@@ -406,6 +406,7 @@ function menuClose() {
   subMenuBack();
   mobileMenu.classList.remove('show');
   mobileMenuBack.classList.remove('show');
+  body.classList.remove('scroll-off');
   overlayVisible(false);
 }
 
