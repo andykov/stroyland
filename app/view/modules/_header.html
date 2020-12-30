@@ -7,35 +7,50 @@
           В связи с неустойчивостью курсов валют цены могут отличаться от
           заявленных. <br />Просим уточнять цены у менеджеров.
         </div>
-        <ul class="top-panel__links">
-          <li>
-            <a href="">Магазины</a>
-          </li>
-          <li class="dropdown">
-            <span>Покупателям</span>
-            <div class="dropdown__body">
-              <a href="#">Link 1</a>
-              <a href="#">Link 2</a>
-              <a href="#">Link 3</a>
-            </div>
-          </li>
-          <li>
-            <a href="">Юридическим лицам</a>
-          </li>
-        </ul>
-        <ul class="top-panel__auth">
-          <li>
-            <a href="" class="icon-user">
-              <svg width="22" height="19">
-                <use xlink:href="img/icons.svg#user"></use>
-              </svg>
-              Войти
-            </a>
-          </li>
-          <li>
-            <a href="">Зарегистрироваться</a>
-          </li>
-        </ul>
+        <div class="top-panel__menu" data-mobile-menu>
+          <div class="top-panel__menu-head">
+            <button class="js-menu-back btn-back">back</button>
+            <button class="js-menu-close close"></button>
+          </div>
+          <ul class="top-panel__links">
+            <li class="top-panel__dropdown" data-mobile-submenu-trigger>
+              <a href="">Магазины</a>
+              <div class="top-panel__dropdown-body">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+              </div>
+            </li>
+            <li class="top-panel__dropdown" data-mobile-submenu-trigger>
+              <span>Покупателям</span>
+              <div class="top-panel__dropdown-body">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+              </div>
+            </li>
+            <li>
+              <a href="">Юридическим лицам</a>
+            </li>
+          </ul>
+          <ul class="top-panel__auth">
+            <li>
+              <a href="" class="icon-user">
+                <svg width="22" height="19">
+                  <use xlink:href="img/icons.svg#user"></use>
+                </svg>
+                Войти
+              </a>
+            </li>
+            <li>
+              <a href="">Зарегистрироваться</a>
+            </li>
+          </ul>
+        </div>
+        <button
+          class="js-contacts-trigger top-panel__contacts-trigger"
+        ></button>
+        <button class="js-menu-trigger top-panel__menu-trigger"></button>
       </div>
     </div>
   </div>
@@ -45,7 +60,7 @@
         <a href="/" class="logo logo--new-year"
           ><img src="img/logo.png" alt=""
         /></a>
-        <ul class="contacts">
+        <ul class="contacts" data-mobile-contacts>
           <li>
             <a href="tel:+78123747383">8 (812) 374-73-83</a>
             <span
@@ -141,8 +156,8 @@
             </button>
             <div class="nav-category">
               <div class="nav-category__mobile-head">
-                <button class="js-nav-back nav-category__back">back</button>
-                <span class="js-nav-title nav-category__title">Каталог</span>
+                <button class="js-nav-back btn-back">back</button>
+                <span class="nav-category__title">Каталог</span>
                 <button class="js-nav-close nav-category__close close"></button>
                 <div class="nav-category__links">
                   <a href="" class="nav-item nav-item--stock">

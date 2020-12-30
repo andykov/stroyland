@@ -20,35 +20,50 @@
           В связи с неустойчивостью курсов валют цены могут отличаться от
           заявленных. <br />Просим уточнять цены у менеджеров.
         </div>
-        <ul class="top-panel__links">
-          <li>
-            <a href="">Магазины</a>
-          </li>
-          <li class="dropdown">
-            <span>Покупателям</span>
-            <div class="dropdown__body">
-              <a href="#">Link 1</a>
-              <a href="#">Link 2</a>
-              <a href="#">Link 3</a>
-            </div>
-          </li>
-          <li>
-            <a href="">Юридическим лицам</a>
-          </li>
-        </ul>
-        <ul class="top-panel__auth">
-          <li>
-            <a href="" class="icon-user">
-              <svg width="22" height="19">
-                <use xlink:href="img/icons.svg#user"></use>
-              </svg>
-              Войти
-            </a>
-          </li>
-          <li>
-            <a href="">Зарегистрироваться</a>
-          </li>
-        </ul>
+        <div class="top-panel__menu" data-mobile-menu>
+          <div class="top-panel__menu-head">
+            <button class="js-menu-back btn-back">back</button>
+            <button class="js-menu-close close"></button>
+          </div>
+          <ul class="top-panel__links">
+            <li class="top-panel__dropdown" data-mobile-submenu-trigger>
+              <a href="">Магазины</a>
+              <div class="top-panel__dropdown-body">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+              </div>
+            </li>
+            <li class="top-panel__dropdown" data-mobile-submenu-trigger>
+              <span>Покупателям</span>
+              <div class="top-panel__dropdown-body">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+              </div>
+            </li>
+            <li>
+              <a href="">Юридическим лицам</a>
+            </li>
+          </ul>
+          <ul class="top-panel__auth">
+            <li>
+              <a href="" class="icon-user">
+                <svg width="22" height="19">
+                  <use xlink:href="img/icons.svg#user"></use>
+                </svg>
+                Войти
+              </a>
+            </li>
+            <li>
+              <a href="">Зарегистрироваться</a>
+            </li>
+          </ul>
+        </div>
+        <button
+          class="js-contacts-trigger top-panel__contacts-trigger"
+        ></button>
+        <button class="js-menu-trigger top-panel__menu-trigger"></button>
       </div>
     </div>
   </div>
@@ -58,7 +73,7 @@
         <a href="/" class="logo logo--new-year"
           ><img src="img/logo.png" alt=""
         /></a>
-        <ul class="contacts">
+        <ul class="contacts" data-mobile-contacts>
           <li>
             <a href="tel:+78123747383">8 (812) 374-73-83</a>
             <span
@@ -154,8 +169,8 @@
             </button>
             <div class="nav-category">
               <div class="nav-category__mobile-head">
-                <button class="js-nav-back nav-category__back">back</button>
-                <span class="js-nav-title nav-category__title">Каталог</span>
+                <button class="js-nav-back btn-back">back</button>
+                <span class="nav-category__title">Каталог</span>
                 <button class="js-nav-close nav-category__close close"></button>
                 <div class="nav-category__links">
                   <a href="" class="nav-item nav-item--stock">
@@ -1740,170 +1755,6 @@
                           </div>
                         </div>
                       </div>
-                      <div class="splide__slide">
-                        <div class="product">
-                          <div class="product__img">
-                            <img src="img/content/product-3.png" alt="" />
-                          </div>
-                          <div class="product__name">
-                            Сифон для раковины двойной 1.1/2"*40 ANI А3000/A3500
-                          </div>
-                          <div class="product__code">ID товара: нет</div>
-                          <div class="product__price">2950 Р</div>
-                          <div class="product__action">
-                            <div class="field-quantity">
-                              <input
-                                class="field-quantity__minus"
-                                type="button"
-                                value="-"
-                                data-field="quantity"
-                              />
-                              <input
-                                class="field-quantity__input"
-                                type="number"
-                                step="1"
-                                max=""
-                                value="1"
-                                name="quantity"
-                              />
-                              <input
-                                class="field-quantity__plus"
-                                type="button"
-                                value="+"
-                                data-field="quantity"
-                              />
-                            </div>
-                            <button class="product__tocart">
-                              <svg width="19" height="18">
-                                <use xlink:href="img/icons.svg#cart"></use>
-                              </svg>
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="splide__slide">
-                        <div class="product">
-                          <div class="product__img">
-                            <img src="img/content/product-4.png" alt="" />
-                          </div>
-                          <div class="product__name">
-                            Сифон для раковины двойной 1.1/2"*40 ANI А3000/A3500
-                          </div>
-                          <div class="product__code">ID товара: нет</div>
-                          <div class="product__price">2950 Р</div>
-                          <div class="product__action">
-                            <div class="field-quantity">
-                              <input
-                                class="field-quantity__minus"
-                                type="button"
-                                value="-"
-                                data-field="quantity"
-                              />
-                              <input
-                                class="field-quantity__input"
-                                type="number"
-                                step="1"
-                                max=""
-                                value="1"
-                                name="quantity"
-                              />
-                              <input
-                                class="field-quantity__plus"
-                                type="button"
-                                value="+"
-                                data-field="quantity"
-                              />
-                            </div>
-                            <button class="product__tocart">
-                              <svg width="19" height="18">
-                                <use xlink:href="img/icons.svg#cart"></use>
-                              </svg>
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="splide__slide">
-                        <div class="product">
-                          <div class="product__img">
-                            <img src="img/content/product-1.png" alt="" />
-                          </div>
-                          <div class="product__name">
-                            Сифон для раковины двойной 1.1/2"*40 ANI А3000/A3500
-                          </div>
-                          <div class="product__code">ID товара: нет</div>
-                          <div class="product__price">2950 Р</div>
-                          <div class="product__action">
-                            <div class="field-quantity">
-                              <input
-                                class="field-quantity__minus"
-                                type="button"
-                                value="-"
-                                data-field="quantity"
-                              />
-                              <input
-                                class="field-quantity__input"
-                                type="number"
-                                step="1"
-                                max=""
-                                value="1"
-                                name="quantity"
-                              />
-                              <input
-                                class="field-quantity__plus"
-                                type="button"
-                                value="+"
-                                data-field="quantity"
-                              />
-                            </div>
-                            <button class="product__tocart">
-                              <svg width="19" height="18">
-                                <use xlink:href="img/icons.svg#cart"></use>
-                              </svg>
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="splide__slide">
-                        <div class="product">
-                          <div class="product__img">
-                            <img src="img/content/product-3.png" alt="" />
-                          </div>
-                          <div class="product__name">
-                            Сифон для раковины двойной 1.1/2"*40 ANI А3000/A3500
-                          </div>
-                          <div class="product__code">ID товара: нет</div>
-                          <div class="product__price">2950 Р</div>
-                          <div class="product__action">
-                            <div class="field-quantity">
-                              <input
-                                class="field-quantity__minus"
-                                type="button"
-                                value="-"
-                                data-field="quantity"
-                              />
-                              <input
-                                class="field-quantity__input"
-                                type="number"
-                                step="1"
-                                max=""
-                                value="1"
-                                name="quantity"
-                              />
-                              <input
-                                class="field-quantity__plus"
-                                type="button"
-                                value="+"
-                                data-field="quantity"
-                              />
-                            </div>
-                            <button class="product__tocart">
-                              <svg width="19" height="18">
-                                <use xlink:href="img/icons.svg#cart"></use>
-                              </svg>
-                            </button>
-                          </div>
-                        </div>
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -1992,11 +1843,11 @@
     </main>
     <footer class="footer">
   <div class="container">
-    <div class="row">
-      <div class="col-6 col-lg-3">
+    <div class="footer__top-panel">
+      <div class="footer__cols">
         <div class="footer__nav">
-          <span class="footer__title">Информация</span>
-          <ul>
+          <span class="footer__title" data-collapsible>Информация</span>
+          <ul data-collapsible-body>
             <li><a href="">Акции</a></li>
             <li><a href="">Новости</a></li>
             <li><a href="">Статьи</a></li>
@@ -2007,11 +1858,9 @@
             <li><a href="">Дизайнерами</a></li>
           </ul>
         </div>
-      </div>
-      <div class="col-6 col-lg-3">
         <div class="footer__nav">
-          <span class="footer__title">О нас</span>
-          <ul>
+          <span class="footer__title" data-collapsible>О нас</span>
+          <ul data-collapsible-body>
             <li><a href="">О компании</a></li>
             <li><a href="">Бренды</a></li>
             <li><a href="">Контакты ИМ</a></li>
@@ -2019,53 +1868,53 @@
             <li><a href="">Вакансии</a></li>
           </ul>
         </div>
-      </div>
-      <div class="col-12 col-sm-6 col-lg-3">
         <div class="footer__contacts">
-          <span class="footer__title">Контакты</span>
-          <p>
-            Индекс: 196084,<br />г. Санкт-Петербург,<br />ул. Коли Томчака д.32
-            б
-          </p>
-          <p>
-            <ul>
-              <li><a href="tel:+78123747383">8 (812) 374-73-83</a></li>
-              <li><a href="tel:+78123865995">8 (812) 386-59-95</a></li>
-            </ul>
-          </p>
-          <p>
-            <ul>
-              <li>Пн-Пт: 09-21</li>
-              <li>Сб-Вс: 10-20</li>
-            </ul>
-          </p>
+          <span class="footer__title" data-collapsible>Контакты</span>
+          <div data-collapsible-body>
+            <p>
+              Индекс: 196084,<br />г. Санкт-Петербург,<br />ул. Коли Томчака д.32
+              б
+            </p>
+            <p>
+              <ul>
+                <li><a href="tel:+78123747383">8 (812) 374-73-83</a></li>
+                <li><a href="tel:+78123865995">8 (812) 386-59-95</a></li>
+              </ul>
+            </p>
+            <p>
+              <ul>
+                <li>Пн-Пт: 09-21</li>
+                <li>Сб-Вс: 10-20</li>
+              </ul>
+            </p>
+          </div>
         </div>
       </div>
-      <div class="col-12 col-sm-6 col-lg-3">
-        <div class="footer__social">
-          <span class="footer__title">Оставайтесь на связи</span>
-          <div class="social">
-            <div class="social__title">Мы в соцеальных сетях:</div>
-            <ul>
-              <li><a href="" class="social__icon social__icon--dzen"></a></li>
-              <li><a href="" class="social__icon social__icon--in"></a></li>
-              <li><a href="" class="social__icon social__icon--vk"></a></li>
-            </ul>
+      <div class="footer__social">
+        <span class="footer__title">Оставайтесь на связи</span>
+        <div class="social">
+          <div class="social__title">Мы в соцеальных сетях:</div>
+          <ul>
+            <li><a href="" class="social__icon social__icon--dzen"></a></li>
+            <li><a href="" class="social__icon social__icon--in"></a></li>
+            <li><a href="" class="social__icon social__icon--vk"></a></li>
+          </ul>
+        </div>
+        <div class="rating-store">
+          <div class="rating-store__title">Рейтинг магазина</div>
+          <div class="rating-store__stars">
+            <span class="star-on"></span>
+            <span class="star-on"></span>
+            <span class="star-on"></span>
+            <span></span>
+            <span></span>
           </div>
-          <div class="rating-store">
-            <div class="rating-store__title">Рейтинг магазина</div>
-            <div class="rating-store__stars">
-              <span class="star-on"></span>
-              <span class="star-on"></span>
-              <span class="star-on"></span>
-              <span></span>
-              <span></span>
-            </div>
-            <img src="img/icons/yandex-market.png" alt="">
-          </div>
+          <img src="img/icons/yandex-market.png" alt="">
         </div>
       </div>
     </div>
+    
+
     
     <div class="footer__bottom-panel">
       <span>2009-2020 © Стройлэнд</span>
@@ -2077,6 +1926,7 @@
     </div>
   </div>
 </footer>
+<div class="overlay"></div>
 
     <script src="js/vendor/tabbis.min.js"></script>
     <script src="js/vendor/splide.min.js"></script>

@@ -148,34 +148,6 @@
       }
     }
 
-    &__back {
-      visibility: hidden;
-      pointer-events: none;
-      font-size: 0;
-      width: 32px;
-      height: 32px;
-      position: relative;
-      left: 5px;
-      top: 5px;
-
-      &::before {
-        content: '';
-        position: absolute;
-        right: 50%;
-        top: 60%;
-        width: 18px;
-        height: 18px;
-        border-bottom: 1px solid currentColor;
-        border-right: 1px solid currentColor;
-        transform: translate(50%, -70%) rotate(135deg);
-        transition: transform 0.3s, border-color 0.3s;
-      }
-      &.show {
-        visibility: visible;
-        pointer-events: auto;
-      }
-    }
-
     @include lg {
       width: 265px;
       position: absolute;
@@ -196,7 +168,7 @@
       top: 0;
       left: 0;
       right: 0;
-      border-bottom: 1px solid;
+      border-bottom: 1px solid #d9ddde;
       z-index: 1;
 
       @include lg {

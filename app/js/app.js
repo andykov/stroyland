@@ -36,7 +36,6 @@ let body = document.querySelector('body'),
   navTrigger = document.querySelector('.js-nav-trigger'),
   navClose = document.querySelector('.js-nav-close'),
   navBack = document.querySelector('.js-nav-back'),
-  navTitle = document.querySelector('.js-nav-title'),
   navCategory = document.querySelector('.nav-category'),
   navSubCategory = document.querySelector('.nav-subcategory');
 
@@ -140,9 +139,11 @@ let promoSlider = new Splide('.promo .splide', {
     },
     556: {
       perPage: 1,
+      arrows: false,
     },
   },
 });
+hideSLiderArrows(promoSlider);
 promoSlider.mount();
 
 // Slider banner
@@ -157,18 +158,19 @@ let bannerSlider = new Splide('.banner .splide', {
     },
   },
 });
+
 bannerSlider.mount();
 
 // SLider Last News
-let lastNewsSlider = new Splide('.last-news .splide', {
+let lastNewsSliderOptions = {
   type: 'loop',
   perPage: 3,
   perMove: 1,
   pagination: false,
   autoplay: true,
   breakpoints: {
-    1024: {
-      arrows: true,
+    992: {
+      arrows: false,
     },
     767: {
       perPage: 2,
@@ -179,7 +181,9 @@ let lastNewsSlider = new Splide('.last-news .splide', {
       arrows: false,
     },
   },
-});
+};
+let lastNewsSlider = new Splide('.last-news .splide', lastNewsSliderOptions);
+hideSLiderArrows(lastNewsSlider);
 lastNewsSlider.mount();
 
 // Gallery
@@ -220,6 +224,7 @@ let firstItemGallery = new Splide(
   productGalleryOptions
 );
 galleryTabs[0].classList.add('active');
+hideSLiderArrows(firstItemGallery);
 firstItemGallery.mount();
 
 // init gallery on tab click
@@ -238,6 +243,7 @@ galleryTabs.forEach(function (tab, i) {
 
       if (!isActive) {
         let g = new Splide(gallery, productGalleryOptions);
+        hideSLiderArrows(g);
         g.mount();
       }
     }
@@ -307,15 +313,128 @@ for (const field of fieldsQuantitys) {
 
 document.addEventListener('click', function (event) {
   // check click outside menu
+  if (!isOutsideClick('.header__top-panel', event.target)) {
+    return false;
+  }
   if (isOutsideClick('.nav', event.target)) {
     navCategory.classList.remove('show');
     navSubCategory.classList.remove('show');
     navBack.classList.remove('show');
     body.classList.remove('scroll-off');
+    menuClose();
   }
 });
 
 function isOutsideClick(ignor, target) {
   var ignoreElement = document.querySelector(ignor);
   return !ignoreElement.contains(target);
+}
+
+function hideSLiderArrows(slider) {
+  slider.on('mounted', function () {
+    let arrows = slider.root.querySelector('.splide__arrows');
+    if (arrows && slider.length <= slider.options.perPage) {
+      arrows.style.display = 'none';
+    }
+  });
+}
+//
+function overlayVisible(display) {
+  let overlay = document.querySelector('.overlay');
+  if (!overlay) {
+    return false;
+  }
+
+  if (display === true) {
+    overlay.classList.add('show');
+  } else {
+    overlay.classList.remove('show');
+  }
+}
+// menu mobile
+let menuTrigger = document.querySelector('.js-menu-trigger'),
+  mobileMenu = document.querySelector('[data-mobile-menu]'),
+  mobileSubMenuTrigger = document.querySelectorAll(
+    '[data-mobile-submenu-trigger]'
+  ),
+  mobileMenuBack = document.querySelector('.js-menu-back'),
+  mobileMenuClose = document.querySelector('.js-menu-close');
+
+menuTrigger.addEventListener('click', menuShow, false);
+
+mobileMenuBack.addEventListener('click', subMenuBack, false);
+mobileMenuClose.addEventListener('click', menuClose, false);
+
+mobileSubMenuTrigger.forEach(function (trigger) {
+  trigger.addEventListener('click', subMenuShow, false);
+});
+
+function menuShow(e) {
+  if (!mobileMenu.classList.contains('show')) {
+    mobileMenu.classList.add('show');
+    body.classList.add('scroll-off');
+    overlayVisible(true);
+  }
+}
+
+function subMenuShow(e) {
+  let target = e.target,
+    parent = target.parentNode;
+  e.preventDefault();
+
+  let siblings = getSiblings(parent);
+  siblings.forEach(function (item) {
+    item.classList.remove('show');
+  });
+
+  if (!parent.classList.contains('show')) {
+    parent.classList.add('show');
+    mobileMenuBack.classList.add('show');
+  }
+}
+
+function subMenuBack(e) {
+  mobileSubMenuTrigger.forEach(function (trigger) {
+    if (trigger.classList.contains('show')) {
+      trigger.classList.remove('show');
+    }
+  });
+  mobileMenuBack.classList.remove('show');
+}
+
+function menuClose() {
+  subMenuBack();
+  mobileMenu.classList.remove('show');
+  mobileMenuBack.classList.remove('show');
+  overlayVisible(false);
+}
+
+let mobileContactsTrigger = document.querySelector('.js-contacts-trigger');
+if (mobileContactsTrigger) {
+  mobileContactsTrigger.addEventListener('click', function (e) {
+    let contacts = document.querySelector('[data-mobile-contacts]');
+    if (!contacts) {
+      return false;
+    }
+    e.target.classList.toggle('active');
+    contacts.classList.toggle('show');
+  });
+}
+
+// Footer Nav Collapse
+let collapsibleTriggers = document.querySelectorAll('[data-collapsible]');
+if (collapsibleTriggers.length) {
+  collapsibleTriggers.forEach(function (trigger) {
+    trigger.addEventListener('click', function () {
+      this.classList.toggle('active');
+      let collapsibleBody = this.parentNode.querySelector(
+        '[data-collapsible-body]'
+      );
+      if (collapsibleBody.style.maxHeight) {
+        collapsibleBody.style.maxHeight = null;
+      } else {
+        collapsibleBody.style.maxHeight = collapsibleBody.scrollHeight + 'px';
+      }
+    });
+  });
 }
