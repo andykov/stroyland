@@ -260,7 +260,7 @@
       opacity: 0;
       visibility: hidden;
       transition: transform 0.3s ease;
-      animation: mobileContactsHide 0.3s ease;
+      // animation: mobileContactsHide 0.3s ease;
 
       &.show {
         animation: mobileContactsShow 0.3s ease;
@@ -655,7 +655,7 @@
 
 @keyframes mobileContactsShow {
   0% {
-    transform: translateY(-100%);
+    transform: translateY(-10%);
     opacity: 0;
     visibility: hidden;
   }
