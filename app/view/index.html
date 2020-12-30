@@ -1398,8 +1398,8 @@
     <script src="js/main.min.js"></script>
     <script>
       MicroModal.init({
-        onShow: onShowModal,
-        onClose: onCloseModal,
+        // onShow: onShowModal,
+        // onClose: onCloseModal,
         openTrigger: 'data-micromodal-trigger',
         closeTrigger: 'data-micromodal-close',
         disableScroll: true,
@@ -1408,29 +1408,12 @@
         awaitCloseAnimation: false,
         debugMode: true,
       });
-      function onShowModal(modal) {
-        console.info(`${modal.id} is shown`);
-      }
-      function onCloseModal(modal) {
-        console.info(`${modal.id} is hidden`);
-      }
-
-      // MicroModal.show('modal-location', {
-      //   onShow: onShow,
-      //   onClose: onClose,
-      // });
-      // let openButton = document.getElementById('open-modal');
-      // let select = document.getElementById('event_select');
-
-      // openButton.addEventListener('click', function () {
-      //   MicroModal.show('modal-location');
-      // });
-
-      // select.addEventListener('change', function () {
-      //   let nextModalId = this.value;
-      //   MicroModal.close('modal-location');
-      //   MicroModal.show('event-modal-' + nextModalId);
-      // });
+      // function onShowModal(modal) {
+      //   console.info(`${modal.id} is shown`);
+      // }
+      // function onCloseModal(modal) {
+      //   console.info(`${modal.id} is hidden`);
+      // }
     </script>
   </body>
 </html>
