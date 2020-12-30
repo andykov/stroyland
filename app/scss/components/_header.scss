@@ -149,6 +149,8 @@
     }
   }
   .logo {
+    align-items: center;
+
     @include md-max {
       margin: 0 auto;
       max-width: 100px;

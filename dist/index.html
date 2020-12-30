@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/vendor/splide-core.min.css" />
     <link rel="stylesheet" href="css/app.min.css" />
   </head>
-  <body>
+  <body class="js-body">
     <header class="header">
   <div class="header__top-panel">
     <div class="container">
@@ -96,7 +96,10 @@
         <div class="header-middle__group">
           <div class="header-middle__group-row">
             <div class="header-middle__location">
-              Ваш город: <a href="">Санкт-Петербург</a>
+              Ваш город:
+              <a href="javascript:;" data-micromodal-trigger="modal-location"
+                >Санкт-Петербург</a
+              >
             </div>
             <div class="header-middle__nav">
               <ul>
@@ -1928,8 +1931,91 @@
 </footer>
 <div class="overlay"></div>
 
+
+    <div class="modal micromodal-slide" id="modal-location" aria-hidden="true">
+      <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+        <div
+          class="modal__container"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="modal-location-title"
+        >
+          <header class="modal__header">
+            <h2 class="modal__title" id="modal-location-title">
+              Сменить город
+            </h2>
+            <button
+              class="modal__close"
+              aria-label="Close modal"
+              data-micromodal-close
+            ></button>
+          </header>
+          <main class="modal__content" id="modal-location-content">
+            <div class="cities">
+              <div class="cities__main">
+                <a href="https://vodolei-spb.ru">Санкт-Петербург</a>
+              </div>
+              <div class="cities__list">
+                <a href="https://vlg.vodolei-spb.ru">Волгоград</a>
+                <a href="https://vrn.vodolei-spb.ru">Воронеж</a>
+                <a href="https://ekb.vodolei-spb.ru">Екатеринбург</a>
+                <a href="https://kzn.vodolei-spb.ru">Казань</a>
+                <a href="https://kdr.vodolei-spb.ru">Краснодар</a>
+                <a href="https://krs.vodolei-spb.ru">Красноярск</a>
+                <a href="https://nn.vodolei-spb.ru">Нижний Новгород</a>
+                <a href="https://nsk.vodolei-spb.ru">Новосибирск</a>
+                <a href="https://omsk.vodolei-spb.ru">Омск</a>
+                <a href="https://perm.vodolei-spb.ru">Пермь</a>
+                <a href="https://rst.vodolei-spb.ru">Ростов-на-Дону</a>
+                <a href="https://sam.vodolei-spb.ru">Самара</a>
+                <a href="https://ufa.vodolei-spb.ru">Уфа</a>
+                <a href="https://chel.vodolei-spb.ru">Челябинск</a>
+              </div>
+            </div>
+          </main>
+        </div>
+      </div>
+    </div>
+
     <script src="js/vendor/tabbis.min.js"></script>
+    <script src="js/vendor/micromodal.min.js"></script>
     <script src="js/vendor/splide.min.js"></script>
     <script src="js/main.min.js"></script>
+    <script>
+      MicroModal.init({
+        onShow: onShowModal,
+        onClose: onCloseModal,
+        openTrigger: 'data-micromodal-trigger',
+        closeTrigger: 'data-micromodal-close',
+        disableScroll: true,
+        disableFocus: false,
+        awaitOpenAnimation: false,
+        awaitCloseAnimation: false,
+        debugMode: true,
+      });
+      function onShowModal(modal) {
+        console.info(`${modal.id} is shown`);
+      }
+      function onCloseModal(modal) {
+        console.info(`${modal.id} is hidden`);
+      }
+
+      // MicroModal.show('modal-location', {
+      //   onShow: onShow,
+      //   onClose: onClose,
+      // });
+      // let openButton = document.getElementById('open-modal');
+      // let select = document.getElementById('event_select');
+
+      // openButton.addEventListener('click', function () {
+      //   MicroModal.show('modal-location');
+      // });
+
+      // select.addEventListener('change', function () {
+      //   let nextModalId = this.value;
+      //   MicroModal.close('modal-location');
+      //   MicroModal.show('event-modal-' + nextModalId);
+      // });
+    </script>
   </body>
 </html>
